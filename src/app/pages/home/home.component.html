@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>
+        Hello, {{fullName}}
+    </h1>
+    <div class="row">
+        <div class="col-12 col-md-4" *ngFor="let item of items">
+            <app-post [post]="item"
+              (deleteEvent)="onDeleteEvent($event)"
+              [class]="item.id % 2 === 0 ? 'event' : 'odd'" title="ababa {{item.title}}">
+            </app-post>
+        </div>
+        <!-- <div class="col-12 col-md-4" *ngFor="let item of itemcomment">
+            <app-comment [comment]="item" [class]="item.id % 2 === 0 ? 'event' : 'odd'" title="ababa {{item.name}}"></app-comment>
+        </div> -->
+    </div>
+</div>

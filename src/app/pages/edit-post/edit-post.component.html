@@ -1,0 +1,50 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="submitData()">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" class="form-control" formControlName="title">
+            <p class="text-muted" *ngIf="title?.invalid && (title?.dirty || title?.touched)">
+                <span *ngIf="title?.errors?.['required']">
+                title is required
+                </span>
+                <span *ngIf="title?.errors?.['minlength']">
+                  min length of title is 5
+                </span>
+                <span *ngIf="title?.errors?.['maxlength']">
+                  max length of title is 255
+                </span>
+            </p>
+        </div>
+        <div class="form-group mt-3">
+            <label for="body">Body</label>
+            <textarea type="text" id="body" class="form-control" formControlName="body"></textarea>
+            <p class="text-muted" *ngIf="body?.invalid && (body?.dirty || body?.touched)">
+                <span *ngIf="body?.errors?.['required']">
+                  body is required
+                </span>
+                <span *ngIf="body?.errors?.['minlength']">
+                  min length of body is 3
+                </span>
+                <span *ngIf="body?.errors?.['maxlength']">
+                  max length of body is 1000
+                </span>
+            </p>
+        </div>
+        <div class="form-group mt-3">
+            <label for="userId">User Id</label>
+            <input type="number" id="userId" class="form-control" formControlName="userId">
+            <p class="text-muted" *ngIf="userId?.invalid && (userId?.dirty || userId?.touched)">
+                <span *ngIf="userId?.errors?.['required']">
+                user id is required
+              </span>
+                <span *ngIf="userId?.errors?.['min']">
+                user id minimun is 1
+              </span>
+            </p>
+        </div>
+        <button type="submit" class="btn btn-primary my-3 me-3" [disabled]="form.invalid">
+          Save
+        </button>
+        <button class="btn btn-outline-danger" type="button">Cancel</button>
+    </form>
+</div>
