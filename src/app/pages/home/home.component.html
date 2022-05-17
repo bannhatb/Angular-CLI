@@ -9,8 +9,11 @@
               [class]="item.id % 2 === 0 ? 'event' : 'odd'" title="ababa {{item.title}}">
             </app-post>
         </div>
-        <!-- <div class="col-12 col-md-4" *ngFor="let item of itemcomment">
-            <app-comment [comment]="item" [class]="item.id % 2 === 0 ? 'event' : 'odd'" title="ababa {{item.name}}"></app-comment>
-        </div> -->
+        <!-- category -->
+        <div class="col-12 col-md-4" *ngFor="let category of items">
+            <app-category [category]="category"
+            [class]="category.id % 2 === 0 ? 'event' : 'odd'" title="ababa {{category.categoryName}}">
+            </app-category>
+        </div>
     </div>
 </div>
