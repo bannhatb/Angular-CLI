@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BusinessService } from 'src/app/services/business.service';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { PostsService } from 'src/app/services/posts.service';
+import { ProductsService } from 'src/app/services/products.service';
 
 
 @Component({
@@ -14,10 +15,12 @@ export class HomeComponent implements OnInit {
   fullName:string = "Vo Van Ban"
   items:Array<any> = []
   categories:Array<any> = []
+  products:Array<any> = []
 
   constructor(
     private postsService: PostsService,
-    private categoriesService: CategoriesService
+    private categoriesService: CategoriesService,
+    private productsService: ProductsService
   ) {
     // this.items.push({
     //   id: 1,
@@ -42,14 +45,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadPosts()
+    this.loadHome()
   }
 
   onClickMe(){
     alert('Click!')
   }
 
-  loadPosts(){
+  loadHome(){
     this.postsService.getPosts()
     .subscribe(
       (res) => this.handleGetPostSuccess(res),
@@ -59,6 +62,12 @@ export class HomeComponent implements OnInit {
     this.categoriesService.getCategoriesByUser()
     .subscribe(
       (res) => this.handleGetCategorySuccess(res),
+      (err) => this.handleGetCategoryError(err)
+    )
+    //product
+    this.productsService.getListProductByUser()
+    .subscribe(
+      (res) => this.handleGetProductSuccess(res),
       (err) => this.handleGetCategoryError(err)
     )
   }
@@ -73,12 +82,9 @@ export class HomeComponent implements OnInit {
 
   onDeleteEvent(postId:number){
     console.log('On Home Component - ' + postId)
-    this.loadPosts()
+    this.loadHome()
   }
-  onDeleteCategoryEvent(categoryId:number){
-    console.log('On Home Component - ' + categoryId)
-    this.loadPosts()
-  }
+
 
   //category
   handleGetCategoryError(err: any){
@@ -88,4 +94,18 @@ export class HomeComponent implements OnInit {
     this.categories = res.object.items
     console.log(res)
   }
+  onDeleteCategoryEvent(categoryId:number){
+    console.log('On Home Component - ' + categoryId)
+    this.loadHome()
+  }
+
+  //product
+  handleGetProductError(err: any){
+    console.log(err)
+  }
+  handleGetProductSuccess(res: any){
+    this.products = res.object.items
+    console.log(res)
+  }
+
 }

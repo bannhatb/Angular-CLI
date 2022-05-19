@@ -1,8 +1,21 @@
 <div class="container">
     <h1>
         Hello, {{fullName}}
-    </h1><br>
+    </h1>
+
+    <!-- product -->
+    <br>
+    <h1>List Product</h1>
+    <div class="row">
+      <div class="col-12 col-md-4" *ngFor="let product of products">
+        <app-product [product]="product"
+              [class]="product.id % 2 === 0 ? 'event' : 'odd'" title="ababa {{product.title}}">
+        </app-product>
+      </div>
+    </div>
+
     <!-- category -->
+    <br>
     <h1>List Category</h1>
     <div class="row">
       <div class="col-12 col-md-4" *ngFor="let category of categories">
@@ -12,6 +25,7 @@
         </app-category>
       </div>
     </div>
+
     <br>
     <h1>List Post</h1>
     <div class="row">
