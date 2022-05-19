@@ -17,10 +17,10 @@
         <a [routerLink]="['/post/'+post.id+'/add-comments']" routerLinkActive="router-link-active" class="btn btn-outline-primary ml-3">
         Add comment
       </a>
-      <a [routerLink]="['/edit-post/']" [queryParams]="{postId: post.id}" routerLinkActive="router-link-active" class="btn btn-warning ml-3 mt-3">
+      <a [routerLink]="['/edit-post/']" [queryParams]="{postId: post.id}" routerLinkActive="router-link-active" class="btn btn-outline-warning ml-3 mt-3">
         Edit
       </a>
-      <button type="button" class="ms-2 mt-3 btn btn-danger" (click)="onDeleted()">
+      <button type="button" class="ms-2 mt-3 btn btn-outline-danger" (click)="onDeleted()">
         Delete
       </button>
     </div>

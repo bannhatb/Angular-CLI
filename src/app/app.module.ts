@@ -22,6 +22,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { CategoryComponent } from './pages/home/category/category.component';
 import { AddCategoryComponent } from './pages/add-category/add-category.component';
 import { EditCategoryComponent } from './pages/edit-category/edit-category.component';
+import { ProductComponent } from './pages/home/product/product.component';
 
 
 
@@ -43,7 +44,8 @@ import { EditCategoryComponent } from './pages/edit-category/edit-category.compo
     LoginComponent,
     CategoryComponent,
     AddCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

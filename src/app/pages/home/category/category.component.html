@@ -11,8 +11,8 @@
       <a [routerLink]="['/edit-category/' + category.id]" routerLinkActive="router-link-active" class="btn btn-outline-warning">
         Edit
       </a>
-      <a [routerLink]="['/edit-category/' + category.id]" routerLinkActive="router-link-active" class="btn btn-outline-danger ml-3">
+      <button type="button" class="ml-3 btn btn-outline-danger " (click)="onDeletedCategory()">
         Delete
-      </a>
+      </button>
     </div>
 </div>

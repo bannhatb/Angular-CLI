@@ -75,6 +75,10 @@ export class HomeComponent implements OnInit {
     console.log('On Home Component - ' + postId)
     this.loadPosts()
   }
+  onDeleteCategoryEvent(categoryId:number){
+    console.log('On Home Component - ' + categoryId)
+    this.loadPosts()
+  }
 
   //category
   handleGetCategoryError(err: any){

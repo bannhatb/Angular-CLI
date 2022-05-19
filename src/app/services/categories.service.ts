@@ -8,6 +8,7 @@ const LIST_CATEGORY_BY_USER = API + '/api/Category/list-by-user';
 const ADD_CATEGORY_NAME_URL = API + '/api/Category/add';
 const GET_CATEGORY_BY_ID = (id:any) => API + '/api/Category/get-by-id/' + id;
 const UPDATE_CATEGORY_URL = API + '/api/Category/edit'
+const DELETE_CATEGORY_BY_ID_URL = (id:any) => API + '/api/Category/delete/' + id;
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +35,8 @@ export class CategoriesService {
 
   updateCategory(data:any){
     return this.httpClient.put(UPDATE_CATEGORY_URL, JSON.stringify(data), this.bussiness.getRequestOptions())
+  }
+  deleteCategory(id:any){
+    return this.httpClient.delete(DELETE_CATEGORY_BY_ID_URL(id), this.bussiness.getRequestOptions())
   }
 }
