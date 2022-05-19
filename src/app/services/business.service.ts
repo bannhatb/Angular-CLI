@@ -2,10 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 const TOKEN_KEY = 'token'
-const API = 'http://vnpt.omtest.online';
+const API =  'http://vnpt.omtest.online';
 const LOGIN_URL = API + '/api/Account/login';
-const LIST_CATEGORY_BY_USER = API + '/api/Category/list-by-user';
-const ADD_CATEGORY_NAME_URL = API + '/api/Category/add';
 
 @Injectable({
   providedIn: 'root'
@@ -41,9 +39,6 @@ export class BusinessService {
     return httpOptions
   }
 
-  //category
-  getCategoriesByUser(){
-    return this.httpClient.get(LIST_CATEGORY_BY_USER, this.getRequestOptions())
-  }
+
 
 }

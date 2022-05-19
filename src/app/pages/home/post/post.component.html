@@ -11,13 +11,13 @@
         <a [routerLink]="['/post-detail/'+post.id]" routerLinkActive="router-link-active" class="btn btn-outline-primary">
         Detail
       </a>
-        <a [routerLink]="['/post/'+post.id+'/comments']" routerLinkActive="router-link-active" class="btn btn-outline-danger ml-3">
+        <a [routerLink]="['/post/'+post.id+'/comments']" routerLinkActive="router-link-active" class="btn btn-primary ml-3">
         Comment
       </a>
-        <a [routerLink]="['/post/'+post.id+'/add-comments']" routerLinkActive="router-link-active" class="btn btn-outline-success ml-3">
+        <a [routerLink]="['/post/'+post.id+'/add-comments']" routerLinkActive="router-link-active" class="btn btn-outline-primary ml-3">
         Add comment
       </a>
-      <a [routerLink]="['/edit-post/']" [queryParams]="{postId: post.id}" routerLinkActive="router-link-active" class="btn btn-success ml-3 mt-3">
+      <a [routerLink]="['/edit-post/']" [queryParams]="{postId: post.id}" routerLinkActive="router-link-active" class="btn btn-warning ml-3 mt-3">
         Edit
       </a>
       <button type="button" class="ms-2 mt-3 btn btn-danger" (click)="onDeleted()">

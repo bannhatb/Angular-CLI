@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BusinessService } from 'src/app/services/business.service';
+import { CategoriesService } from 'src/app/services/categories.service';
 import { PostsService } from 'src/app/services/posts.service';
 
 
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private postsService: PostsService,
-    private businessService: BusinessService
+    private categoriesService: CategoriesService
   ) {
     // this.items.push({
     //   id: 1,
@@ -42,7 +43,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadPosts()
-    this.loadCategories()
   }
 
   onClickMe(){
@@ -55,7 +55,12 @@ export class HomeComponent implements OnInit {
       (res) => this.handleGetPostSuccess(res),
       (err) => this.handleGetPostError(err)
     )
-
+    //category
+    this.categoriesService.getCategoriesByUser()
+    .subscribe(
+      (res) => this.handleGetCategorySuccess(res),
+      (err) => this.handleGetCategoryError(err)
+    )
   }
   handleGetPostSuccess(res: any) {
     this.items = res
@@ -72,18 +77,11 @@ export class HomeComponent implements OnInit {
   }
 
   //category
-  loadCategories(){
-    this.businessService.getCategoriesByUser()
-    .subscribe(
-      (res) => this.handleGetCategorySuccess(res),
-      (err) => this.handleGetCategoryError(err)
-    )
-  }
   handleGetCategoryError(err: any){
     console.log(err)
   }
   handleGetCategorySuccess(res: any){
-    this.categories = res
+    this.categories = res.object.items
     console.log(res)
   }
 }

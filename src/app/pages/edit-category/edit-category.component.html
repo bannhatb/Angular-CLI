@@ -1,0 +1,30 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="submitData()">
+        <div class="form-group">
+        <label for="id">id</label>
+            <input type="text" id="id" class="form-control" formControlName="id">
+            <p class="text-muted" *ngIf="id?.invalid && (id?.dirty || id?.touched)">
+                <span *ngIf="id?.errors?.['required']">
+                categoryName is required
+                </span>
+            </p>
+            <label for="categoryName">categoryName</label>
+            <input type="text" id="categoryName" class="form-control" formControlName="categoryName">
+            <p class="text-muted" *ngIf="categoryName?.invalid && (categoryName?.dirty || categoryName?.touched)">
+                <span *ngIf="categoryName?.errors?.['required']">
+                categoryName is required
+                </span>
+                <span *ngIf="categoryName?.errors?.['minlength']">
+                  min length of categoryName is 2
+                </span>
+                <span *ngIf="categoryName?.errors?.['maxlength']">
+                  max length of categoryName is 100
+                </span>
+            </p>
+        </div>
+        <button type="submit" class="btn btn-primary my-3 me-3" [disabled]="form.invalid">
+          Save
+        </button>
+        <button class="btn btn-outline-danger" type="button">Cancel</button>
+    </form>
+</div>

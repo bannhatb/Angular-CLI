@@ -20,6 +20,8 @@ import { AddCommentComponent } from './pages/add-comment/add-comment.component';
 import { EditPostComponent } from './pages/edit-post/edit-post.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CategoryComponent } from './pages/home/category/category.component';
+import { AddCategoryComponent } from './pages/add-category/add-category.component';
+import { EditCategoryComponent } from './pages/edit-category/edit-category.component';
 
 
 
@@ -39,7 +41,9 @@ import { CategoryComponent } from './pages/home/category/category.component';
     AddCommentComponent,
     EditPostComponent,
     LoginComponent,
-    CategoryComponent
+    CategoryComponent,
+    AddCategoryComponent,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,
