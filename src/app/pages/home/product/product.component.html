@@ -8,7 +8,7 @@
         Price: {{product.Price}} $
     </div>
     <div class="card-footer">
-      <a [routerLink]="['#']"  routerLinkActive="router-link-active" class="btn btn-outline-warning ml-3 mt-3">
+      <a [routerLink]="['/edit-product/'+product.Id]"  routerLinkActive="router-link-active" class="btn btn-outline-warning ml-3 mt-3">
         Edit
       </a>
       <button type="button" class="ms-2 mt-3 btn btn-outline-danger" >

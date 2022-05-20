@@ -1,0 +1,71 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="submitData()">
+        <div class="form-group">
+            <label for="productName">ProductName</label>
+            <input type="text" id="productName" class="form-control" formControlName="productName">
+            <p class="text-muted" *ngIf="productName?.invalid && (productName?.dirty || productName?.touched)">
+              <span *ngIf="productName?.errors?.['required']">
+                productName is required
+              </span>
+                <span *ngIf="productName?.errors?.['minlength']">
+                minLenght is 5
+              </span>
+                <span *ngIf="productName?.errors?.['maxlength']">
+                maxLenght is 100
+              </span>
+            </p>
+        </div>
+        <div class="form-group mt-3">
+            <label>CategoryId</label>
+            <input type="number" id="categoryId" class="form-control" formControlName="categoryId">
+            <p class="text-muted" *ngIf="categoryId?.invalid && (categoryId?.dirty || categoryId?.touched)">
+                <span *ngIf="categoryId?.errors?.['required']">
+                categoryId is required
+              </span>
+                <span *ngIf="categoryId?.errors?.['min']">
+                categoryId minimum is 1
+              </span>
+            </p>
+        </div>
+        <div class="form-group mt-3">
+            <label>Price</label>
+            <input type="number" id="price" class="form-control" formControlName="price">
+            <p class="text-muted" *ngIf="price?.invalid && (price?.dirty || price?.touched)">
+                <span *ngIf="price?.errors?.['required']">
+                price is required
+              </span>
+                <span *ngIf="price?.errors?.['min']">
+                minimum is 1
+              </span>
+            </p>
+        </div>
+        <div class="form-group mt-3">
+            <label>Amount</label>
+            <input type="number" id="amount" class="form-control" formControlName="amount">
+            <p class="text-muted" *ngIf="amount?.invalid && (amount?.dirty || amount?.touched)">
+                <span *ngIf="amount?.errors?.['required']">
+                amount is required
+              </span>
+                <span *ngIf="amount?.errors?.['min']">
+                minimum is 1
+              </span>
+            </p>
+        </div>
+        <div class="form-group mt-3">
+            <label>Supplier</label>
+            <input type="text" id="supplier" class="form-control" formControlName="supplier">
+            <p class="text-muted" *ngIf="supplier?.invalid && (supplier?.dirty || supplier?.touched)">
+                <span *ngIf="supplier?.errors?.['required']">
+                supplier is required
+              </span>
+                <span *ngIf="supplier?.errors?.['minlength']">
+                minLenght is 1
+              </span>
+            </p>
+        </div>
+        <button type="submit" class="btn btn-primary my-3 me-3" [disabled]="form.invalid">
+          Save
+        </button>
+        <button class="btn btn-outline-danger" type="button">Cancel</button>
+    </form>
+</div>

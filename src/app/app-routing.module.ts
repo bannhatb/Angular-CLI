@@ -10,6 +10,7 @@ import { CommentDetailComponent } from './pages/comment-detail/comment-detail.co
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { EditCategoryComponent } from './pages/edit-category/edit-category.component';
 import { EditPostComponent } from './pages/edit-post/edit-post.component';
+import { EditProductComponent } from './pages/edit-product/edit-product.component';
 import { CommentComponent } from './pages/home/comment/comment.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -71,6 +72,11 @@ const routes: Routes = [
       {
         path: 'add-product',
         component: AddProductComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'edit-product/:id',
+        component: EditProductComponent,
         canActivate: [AuthGuard]
       }
     ]

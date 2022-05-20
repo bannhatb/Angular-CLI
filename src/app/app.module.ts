@@ -24,6 +24,7 @@ import { AddCategoryComponent } from './pages/add-category/add-category.componen
 import { EditCategoryComponent } from './pages/edit-category/edit-category.component';
 import { ProductComponent } from './pages/home/product/product.component';
 import { AddProductComponent } from './pages/add-product/add-product.component';
+import { EditProductComponent } from './pages/edit-product/edit-product.component';
 
 
 
@@ -47,7 +48,8 @@ import { AddProductComponent } from './pages/add-product/add-product.component';
     AddCategoryComponent,
     EditCategoryComponent,
     ProductComponent,
-    AddProductComponent
+    AddProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
