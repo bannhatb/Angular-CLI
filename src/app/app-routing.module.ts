@@ -5,6 +5,7 @@ import { DefaultComponent } from './layouts/default/default.component';
 import { AddCategoryComponent } from './pages/add-category/add-category.component';
 import { AddCommentComponent } from './pages/add-comment/add-comment.component';
 import { AddPostComponent } from './pages/add-post/add-post.component';
+import { AddProductComponent } from './pages/add-product/add-product.component';
 import { CommentDetailComponent } from './pages/comment-detail/comment-detail.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { EditCategoryComponent } from './pages/edit-category/edit-category.component';
@@ -65,6 +66,11 @@ const routes: Routes = [
       {
         path: 'edit-category/:id',
         component: EditCategoryComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'add-product',
+        component: AddProductComponent,
         canActivate: [AuthGuard]
       }
     ]
