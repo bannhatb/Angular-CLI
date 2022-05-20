@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit {
   }
 
   onDeleteEvent(postId:number){
-    console.log('On Home Component - ' + postId)
+    console.log('Delete Post - ' + postId)
     this.loadHome()
   }
 
@@ -95,7 +95,7 @@ export class HomeComponent implements OnInit {
     console.log(res)
   }
   onDeleteCategoryEvent(categoryId:number){
-    console.log('On Home Component - ' + categoryId)
+    console.log('Delete Category - ' + categoryId)
     this.loadHome()
   }
 
@@ -106,6 +106,10 @@ export class HomeComponent implements OnInit {
   handleGetProductSuccess(res: any){
     this.products = res.object.items
     console.log(res)
+  }
+  onDeleteProductEvent(productId:number){
+    console.log('Delete Product - ' + productId)
+    this.loadHome()
   }
 
 }

@@ -9,6 +9,7 @@
     <div class="row">
       <div class="col-12 col-md-4" *ngFor="let product of products">
         <app-product [product]="product"
+              (deleteProductEvent)="onDeleteProductEvent($event)"
               [class]="product.id % 2 === 0 ? 'event' : 'odd'" title="ababa {{product.title}}">
         </app-product>
       </div>
