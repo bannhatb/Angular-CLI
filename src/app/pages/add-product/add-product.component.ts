@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { CategoriesService } from 'src/app/services/categories.service';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -11,12 +12,12 @@ import { ProductsService } from 'src/app/services/products.service';
 export class AddProductComponent implements OnInit {
 
   form: FormGroup
-
+  listCategoryId:Array<any> = []
   constructor(
-    private activatedRoute: ActivatedRoute,
     private productsService: ProductsService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private categoriesService: CategoriesService
   ) { }
 
   ngOnInit(): void {
